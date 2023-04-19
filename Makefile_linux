@@ -27,11 +27,15 @@ compiler=g++
 # Version 9 or earlier (Codespaces)
 CPP_VERSION=c++2a
 
+INCLUDE_DIRS=-I12_ObserverExample/include/ -IMemoryGame_Model/include/ -ITextUI/include/ -IMemoryGame_TextUI/include/
+INCLUDES=12_ObserverExample/include/*.h MemoryGame_Model/include/*.h TextUI/include/*.h MemoryGame_TextUI/include/*.h
+SRCS=12_ObserverExample/src/*.cpp MemoryGame_Model/src/*.cpp TextUI/src/*.cpp MemoryGame_TextUI/src/*.cpp
+
 bin:
 	mkdir -p bin
 
-bin/main: bin src/*.cpp include/*.h
-	${compiler} -std=${CPP_VERSION} -o bin/main -g -Wall src/*.cpp -Iinclude
+bin/main: bin ${SRCS} ${INCLUDES}
+	${compiler} -std=${CPP_VERSION} -o bin/main -g -Wall */src/*.cpp ${INCLUDE_DIRS}
 
 #bin/main.o: bin src/helloWorld.cpp
 #	${compiler} -std=c++20 -c -o bin/main.o -g -Wall src/helloWorld.cpp 
