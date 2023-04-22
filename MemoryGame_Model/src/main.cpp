@@ -1,4 +1,4 @@
-/*#include "Model.h"
+#include "Model.h"
 #include <iostream>
 
 void printBoard (const Model &rcModel)
@@ -30,10 +30,11 @@ int main ()
 
   while (!cTheModel.isBoardDone ())
   {
-    system ("cls");
+    system ("clear");
     std::cout << " --------START--------------\n";
     printBoard (cTheModel);
 
+    std::cout << " Enter x1 y1 x2 y2: ";
     std::cin >> x1 >> y1 >> x2 >> y2;
 
     cTheModel.flip (x1, y1);
@@ -47,8 +48,12 @@ int main ()
 
     cTheModel.advanceTurn ();
     std::cout << "\n--------END--------------\n";
-    system ("pause");
+    // system ("pause");  // windows
+    // mac/linux
+    std::cin.get(); // read the trailing \n from x1..y2
+    std::cin.get(); // wait for the user to press enter
+    
   }
 
   return EXIT_SUCCESS;
-}*/
+}

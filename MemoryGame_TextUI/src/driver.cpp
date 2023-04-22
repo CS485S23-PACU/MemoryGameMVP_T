@@ -29,7 +29,7 @@ void onSetData(std::string cData)
 //
 // Returned:    EXIT_SUCCESS
 //***************************************************************************
-int main ()
+/*int main ()
 {
   TextUI cView(std::cout, std::cin);
 
@@ -41,4 +41,4 @@ int main ()
   cView.UIEventLoop ();
 
   return EXIT_SUCCESS;
-}
+}*/
